@@ -8,9 +8,16 @@ const Color = ({color, setSelectedColor}) => {
           ></div>
 }
 
+const Select = (select, setSelect) => {
+  <div 
+    className={select}
+    onClick={() => setSelect(select)}></div>
+}
+
 const App = () => {
 
   const [selectedColor, setSelectedColor] = useState("");
+  const [select, setSelect] = useState("");
 
   return (
     <div id="container">
@@ -23,6 +30,7 @@ const App = () => {
         <Color color="orange" setSelectedColor={setSelectedColor}/>
         <Color color="green" setSelectedColor={setSelectedColor}/>
         <Color color="blue" setSelectedColor={setSelectedColor}/>
+        <Select select="selected" setSelect={setSelect}/>
       </div>
     </div>
   );
